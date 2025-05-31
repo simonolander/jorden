@@ -350,16 +350,6 @@
     "svg": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Western_Sahara_%28orthographic_projection%29.svg"
   },
   {
-    "country": "Azawad",
-    "page": "https://commons.wikimedia.org/wiki/File:Azawad_(orthographic_projection).svg",
-    "tags": [
-      "Western Africa",
-      "Africa"
-    ],
-    "author": "Chipmunkdavis",
-    "svg": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Azawad_%28orthographic_projection%29.svg"
-  },
-  {
     "country": "Benin",
     "page": "https://commons.wikimedia.org/wiki/File:Benin_(orthographic_projection_with_inset).svg",
     "tags": [
@@ -448,16 +438,6 @@
     ],
     "author": "Marcos Elias de Oliveira Júnior",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mali_%28orthographic_projection%29.svg"
-  },
-  {
-    "country": "Mali without Azawad",
-    "page": "https://commons.wikimedia.org/wiki/File:Mali_de_iure_(orthographic_projection).svg",
-    "tags": [
-      "Western Africa",
-      "Africa"
-    ],
-    "author": "Marcos Elias de Oliveira Júnior",
-    "svg": "https://upload.wikimedia.org/wikipedia/commons/8/84/Mali_de_iure_%28orthographic_projection%29.svg"
   },
   {
     "country": "Mauritania",
