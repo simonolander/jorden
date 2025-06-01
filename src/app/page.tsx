@@ -1,40 +1,61 @@
 'use client'
 
 import countries from "./countries.json"
-import {Box, Button, Stack, Typography, useMediaQuery} from "@mui/material";
+import {useState} from "react";
+
+interface Country {
+    country: string,
+    svg: string,
+}
+
+interface GameState {
+    country: Country,
+    options: Country[],
+    answer: Country | undefined
+}
+
+function newState(): GameState {
+    const country = countries[Math.floor(Math.random() * countries.length)]
+    const options = [country]
+    while (options.length < 4) {
+        let option = countries[Math.floor(Math.random() * countries.length)];
+        if (options.some(opt => opt.country === option.country)) {
+            continue
+        }
+        options.push(option)
+    }
+    options.sort(() => Math.random() - 0.5)
+    return {
+        country,
+        options,
+        answer: undefined
+    }
+}
 
 export default function Home() {
-    const landscape = useMediaQuery('(orientation: landscape)')
-  const country = countries[Math.floor(Math.random() * countries.length)];
-  const options = [country]
-  while (options.length < 4) {
-    let option = countries[Math.floor(Math.random() * countries.length)];
-    if (options.some(opt => opt.country === option.country)) {
-      continue
+    const [state, setState] = useState(newState)
+    const {country, options, answer} = state
+
+    const setAnswer = (answer: Country) => {
+        setState({...state, answer})
     }
-    options.push(option)
-  }
-  options.sort(() => Math.random() - 0.5)
-  return (
-      <Stack direction={landscape ? "row" : "column"} sx={{p: 2}} spacing={2} justifyContent="center" alignItems="center">
-          <Stack direction="column" justifyContent="center" alignItems="center" spacing={2}>
-              <Typography variant="h3">Where are we?</Typography>
-              <Box
-                  component="img"
-                  src={country.svg}
-                  alt={"Where are we?"}
-                  width="100%"
-              />
-          </Stack>
-          <Stack direction="column" spacing={2} justifyContent="center" fullfillWidth>
-              {
-                  options.map((option, i) => (
-                      <Button key={i} variant="contained" fullWidth>
-                          {option.country}
-                      </Button>
-                  ))
-              }
-          </Stack>
-      </Stack>
+
+    return (
+        <div>
+            <div>
+                <img src={country.svg} alt="A map with a region highlighted in green"/>
+            </div>
+            <div>
+                {options.map((option, i) => (
+                    <button key={i} onClick={() => setAnswer(option)}>{option.country}</button>
+                ))}
+                {answer &&
+                    <>
+                        {answer === country ? <div>You got it!</div> : <div>Nope!</div>}
+                        <button onClick={() => setState(newState)}>New game</button>
+                    </>
+                }
+            </div>
+        </div>
   )
 }
