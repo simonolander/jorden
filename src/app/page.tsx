@@ -41,7 +41,7 @@ export default function Home() {
     }
 
     return (
-        <div>
+        <div className="root">
             <div>
                 <img src={country.svg} alt="A map with a region highlighted in green"/>
             </div>
