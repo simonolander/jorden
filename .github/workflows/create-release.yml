@@ -1,0 +1,40 @@
+on:
+  push:
+    branches:
+      - master
+
+name: Create Release
+
+jobs:
+  build:
+    name: Create Release
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: npm
+
+    - run: npm ci
+
+    - name: Set version and date in build.json
+      run: |
+        sha="${{ github.sha }}"
+        short_sha="${sha:0:8}"
+        sed -i "s/__VERSION__/${short_sha}/g" src/app/build.json
+        sed -i "s/__BUILD_TIME__/$(date --iso-8601=seconds)/g" src/app/build.json
+
+    - name: Build bundle
+      run: npm run build
+
+    - name: Upload bundle to S3
+      uses: jakejarvis/s3-sync-action@v0.5.0
+      with:
+        args: --delete --storage-class=REDUCED_REDUNDANCY
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: eu-north-1
+        SOURCE_DIR: out
