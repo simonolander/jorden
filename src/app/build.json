@@ -1,4 +1,4 @@
 {
-  "version": "__RELEASE_VERSION__",
-  "buildTime": "__LAST_UPDATED__"
+  "version": "__VERSION__",
+  "buildTime": "__BUILD_TIME__"
 }
