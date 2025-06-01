@@ -1,8 +1,40 @@
-
-.body {
-    min-height: 100vh;
+body {
+    height: 100%;
+    margin: 0;
+    padding: 16px;
 }
 
 .root {
-    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    gap: 16px;
+
+    @media screen and (width <= 768px) {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    @media screen and (width > 768px) {
+        height: 100%;
+    }
+}
+
+.map {
+    @media screen and (width <= 768px) {
+        width: 100%;
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    min-width: 168px;
 }

@@ -15,7 +15,8 @@ interface GameState {
 }
 
 function newState(): GameState {
-    const country = countries[Math.floor(Math.random() * countries.length)]
+    // const country = countries[Math.floor(Math.random() * countries.length)]
+    const country = countries.find(c => c.country === "Ecuador")
     const options = [country]
     while (options.length < 4) {
         let option = countries[Math.floor(Math.random() * countries.length)];
@@ -42,19 +43,27 @@ export default function Home() {
 
     return (
         <div className="root">
-            <div>
-                <img src={country.svg} alt="A map with a region highlighted in green"/>
-            </div>
-            <div>
-                {options.map((option, i) => (
-                    <button key={i} onClick={() => setAnswer(option)}>{option.country}</button>
-                ))}
-                {answer &&
-                    <>
-                        {answer === country ? <div>You got it!</div> : <div>Nope!</div>}
-                        <button onClick={() => setState(newState)}>New game</button>
-                    </>
-                }
+            <div className="container">
+                <img className="map" src={country.svg} alt="A map with a region highlighted in green"/>
+                <div className="options">
+                    {answer || true
+                        ? (
+                            <>
+                                {
+                                    answer === country
+                                        ? <p>{country.country}, nice!</p>
+                                        : <p>Not {answer?.country}, but {country.country}!</p>
+                                }
+                                <button onClick={() => setState(newState)}>New game</button>
+                            </>
+                        )
+                        : (
+                            options.map((option, i) => (
+                                <button key={i} onClick={() => setAnswer(option)}>{option.country}</button>
+                            ))
+                        )
+                    }
+                </div>
             </div>
         </div>
   )
