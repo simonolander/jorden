@@ -16,7 +16,6 @@ interface GameState {
 
 function newState(): GameState {
     const country = countries[Math.floor(Math.random() * countries.length)]
-    // const country = countries.find(c => c.country === "Ecuador")
     const options = [country]
     while (options.length < 4) {
         let option = countries[Math.floor(Math.random() * countries.length)];
@@ -36,9 +35,15 @@ function newState(): GameState {
 export default function Home() {
     const [state, setState] = useState(newState)
     const {country, options, answer} = state
+    const [score, setScore] = useState(0)
+    const [total, setTotal] = useState(0)
 
-    const setAnswer = (answer: Country) => {
-        setState({...state, answer})
+    const submitAnswer = (answer: Country) => {
+        setState(it => ({...it, answer}))
+        setTotal(it => it + 1)
+        if (answer === country) {
+            setScore(it => it + 1)
+        }
     }
 
     return (
@@ -62,12 +67,13 @@ export default function Home() {
                                             </p>
                                         )
                                 }
-                                <button className="new-game" onClick={() => setState(newState)}>New game</button>
+                                <button className="new-game" onClick={() => setState(newState)}>Again!</button>
+                                <p className="score">You've answered <strong>{score} out of {total}</strong> correctly!</p>
                             </>
                         )
                         : (
                             options.map((option, i) => (
-                                <button key={i} onClick={() => setAnswer(option)}>{option.country}</button>
+                                <button key={i} onClick={() => submitAnswer(option)}>{option.country}</button>
                             ))
                         )
                     }

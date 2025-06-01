@@ -128,13 +128,19 @@ button.new-game {
     }
 }
 
-p {
+.success-message, .error-message {
     font-size: 1.1rem;
     margin: 0;
     padding: 16px;
     border-radius: var(--border-radius);
     text-align: center;
     box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+.score {
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
 }
 
 .success-message, .error-message {
