@@ -79,6 +79,12 @@ body {
     }
 }
 
+.loading {
+    filter: blur(8px);
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
 .options {
     display: flex;
     flex-direction: column;

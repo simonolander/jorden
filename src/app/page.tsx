@@ -17,8 +17,16 @@ interface GameState {
 function newState(): GameState {
     const country = countries[Math.floor(Math.random() * countries.length)]
     const options = [country]
+    const candidates = countries.filter(it => it.tags.some(tag => country.tags.includes(tag)))
+    while (candidates.length < 10) {
+        const candidate = countries[Math.floor(Math.random() * countries.length)]
+        if (candidates.some(opt => opt.country === candidate.country)) {
+            continue
+        }
+        candidates.push(candidate)
+    }
     while (options.length < 4) {
-        let option = countries[Math.floor(Math.random() * countries.length)];
+        let option = candidates[Math.floor(Math.random() * candidates.length)];
         if (options.some(opt => opt.country === option.country)) {
             continue
         }
@@ -37,6 +45,7 @@ export default function Home() {
     const {country, options, answer} = state
     const [score, setScore] = useState(0)
     const [total, setTotal] = useState(0)
+    const [loading, setLoading] = useState(true)
 
     const submitAnswer = (answer: Country) => {
         setState(it => ({...it, answer}))
@@ -46,10 +55,20 @@ export default function Home() {
         }
     }
 
+    const onNewGameClick = function () {
+        setState(newState)
+        setLoading(true)
+    }
+
     return (
         <div className="root">
             <div className="container">
-                <img className="map" src={country.svg} alt="A map with a region highlighted in green"/>
+                <img
+                    className={`map ${loading ? 'loading' : ''}`}
+                    onLoad={() => setLoading(false)}
+                    src={country.svg}
+                    alt="A map with a region highlighted in green"
+                />
                 <div className="options">
                     {answer
                         ? (
@@ -67,7 +86,7 @@ export default function Home() {
                                             </p>
                                         )
                                 }
-                                <button className="new-game" onClick={() => setState(newState)}>Again!</button>
+                                <button className="new-game" onClick={() => onNewGameClick()}>Again!</button>
                                 <p className="score">You've answered <strong>{score} out of {total}</strong> correctly!</p>
                             </>
                         )
