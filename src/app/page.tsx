@@ -8,7 +8,7 @@ const buildDate = new Date(buildInfo.buildTime).toLocaleDateString("sv-SE")
 const buildDateTime = new Date(buildInfo.buildTime).toLocaleString("sv-SE")
 
 interface Country {
-    country: string,
+    name: string,
     svg: string,
 }
 
@@ -20,18 +20,19 @@ interface GameState {
 
 function newState(): GameState {
     const country = countries[Math.floor(Math.random() * countries.length)]
+    const tag = country.tags[Math.floor(Math.random() * country.tags.length)]
     const options = [country]
-    const candidates = countries.filter(it => it.tags.some(tag => country.tags.includes(tag)))
-    while (candidates.length < 10) {
+    const candidates = countries.filter(it => it.tags.includes(tag))
+    while (candidates.length < 6) {
         const candidate = countries[Math.floor(Math.random() * countries.length)]
-        if (candidates.some(opt => opt.country === candidate.country)) {
+        if (candidates.some(it => it.name === candidate.name)) {
             continue
         }
         candidates.push(candidate)
     }
     while (options.length < 4) {
         let option = candidates[Math.floor(Math.random() * candidates.length)];
-        if (options.some(opt => opt.country === option.country)) {
+        if (options.some(it => it.name === option.name)) {
             continue
         }
         options.push(option)
@@ -45,8 +46,7 @@ function newState(): GameState {
 }
 
 export default function Home() {
-    const [state, setState] = useState(newState)
-    const {country, options, answer} = state
+    const [{country, options, answer}, setState] = useState(newState)
     const [score, setScore] = useState(0)
     const [total, setTotal] = useState(0)
     const [loading, setLoading] = useState(true)
@@ -81,12 +81,12 @@ export default function Home() {
                                     answer === country
                                         ? (
                                             <p className="success-message">
-                                                <span className="correct-country-name">{country.country}</span>, nice!
+                                                <span className="correct-country-name">{country.name}</span>, nice!
                                             </p>
                                         )
                                         : (
                                             <p className="error-message">
-                                                Not {answer.country}, but <span className="correct-country-name">{country.country}</span>!
+                                                Not {answer.name}, but <span className="correct-country-name">{country.name}</span>!
                                             </p>
                                         )
                                 }
@@ -96,7 +96,7 @@ export default function Home() {
                         )
                         : (
                             options.map((option, i) => (
-                                <button key={i} onClick={() => submitAnswer(option)}>{option.country}</button>
+                                <button key={i} onClick={() => submitAnswer(option)}>{option.name}</button>
                             ))
                         )
                     }
