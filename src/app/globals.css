@@ -185,4 +185,8 @@ button.new-game {
     .commit {
         font-family: monospace;
     }
+
+    @media (width < 768px) or (height < 768px) {
+        font-size: 0.5rem;
+    }
 }
