@@ -1,7 +1,11 @@
 'use client'
 
+import buildInfo from "./build.json"
 import countries from "./countries.json"
 import {useState} from "react";
+
+const buildDate = new Date(buildInfo.buildTime).toLocaleDateString("sv-SE")
+const buildDateTime = new Date(buildInfo.buildTime).toLocaleString("sv-SE")
 
 interface Country {
     country: string,
@@ -96,6 +100,10 @@ export default function Home() {
                             ))
                         )
                     }
+                </div>
+                <div className="build-info">
+                    <p className="commit"><a href="https://github.com/simonolander/jorden">{buildInfo.version}</a></p>
+                    <p title={buildDateTime}>{buildDate}</p>
                 </div>
             </div>
         </div>

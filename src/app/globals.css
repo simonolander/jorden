@@ -168,3 +168,21 @@ button.new-game {
 .correct-country-name {
     font-weight: bold;
 }
+
+.build-info {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 16px;
+    font-size: 0.8rem;
+    text-align: right;
+    color: gray;
+
+    > p {
+        margin: 0;
+    }
+
+    .commit {
+        font-family: monospace;
+    }
+}
