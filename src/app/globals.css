@@ -187,6 +187,23 @@ button.new-game {
     }
 
     @media (width < 768px) or (height < 768px) {
-        font-size: 0.5rem;
+        display: none;
+    }
+}
+
+.github-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    opacity: 10%;
+    transition: opacity 0.1s ease;
+
+    > img {
+        width: 48px;
+    }
+
+    &:hover {
+        opacity: 100%;
     }
 }

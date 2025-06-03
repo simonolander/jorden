@@ -66,6 +66,9 @@ export default function Home() {
 
     return (
         <div className="root">
+            <a className="github-link" href="https://github.com/simonolander/jorden">
+                <img src="/github-logo.svg" alt="Source code"/>
+            </a>
             <div className="container">
                 <img
                     className={`map ${loading ? 'loading' : ''}`}
