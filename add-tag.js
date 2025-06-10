@@ -3,28 +3,18 @@
 const countries = require("./src/app/countries.json")
 const fs = require("fs")
 
-const tag = "Eastern Europe"
+const tag = "Western Europe"
 const countryNames = [
-    "Belarus",
-    "Bosnia and Herzegovina",
-    "Bulgaria",
-    "Czech Republic",
-    "Georgia",
-    "Hungary",
-    "Moldova",
-    "North Macedonia",
-    "Poland",
-    "Romania",
-    "Russia",
-    "Serbia",
-    "Slovakia",
-    "Slovenia",
-    "Ukraine",
-    "Albania",
-    "Armenia",
-    "Azerbaijan",
-    "Kosovo",
-    "Montenegro",
+    "Belgium",
+    "France",
+    "Germany",
+    "Netherlands",
+    "Switzerland",
+    "United Kingdom",
+    "Portugal",
+    "Spain",
+    "Italy",
+    "Iceland",
 ]
 
 for (const countryName of countryNames) {

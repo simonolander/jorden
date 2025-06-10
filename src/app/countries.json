@@ -1125,7 +1125,8 @@
     "name": "Belgium",
     "page": "https://commons.wikimedia.org/wiki/File:Belgium_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Rob",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/79/Belgium_%28orthographic_projection%29.svg"
@@ -1182,7 +1183,8 @@
     "name": "France",
     "page": "https://commons.wikimedia.org/wiki/File:France_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Damouns",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/e/e1/France_%28orthographic_projection%29.svg"
@@ -1201,7 +1203,8 @@
     "name": "Germany",
     "page": "https://commons.wikimedia.org/wiki/File:Germany_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "The Emirr",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/9/95/Germany_%28orthographic_projection%29.svg"
@@ -1211,7 +1214,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Iceland_(orthographic_projection).svg",
     "tags": [
       "Europe",
-      "Island"
+      "Island",
+      "Western Europe"
     ],
     "author": "Ninrouter",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Iceland_%28orthographic_projection%29.svg"
@@ -1220,7 +1224,8 @@
     "name": "Italy",
     "page": "https://commons.wikimedia.org/wiki/File:Italy_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Neq00",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Italy_%28orthographic_projection%29.svg"
@@ -1269,7 +1274,8 @@
     "name": "Netherlands",
     "page": "https://commons.wikimedia.org/wiki/File:Netherlands_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Rob",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/5/52/Netherlands_%28orthographic_projection%29.svg"
@@ -1297,7 +1303,8 @@
     "name": "Portugal",
     "page": "https://commons.wikimedia.org/wiki/File:Portugal_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Queix",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Portugal_%28orthographic_projection%29.svg"
@@ -1337,7 +1344,8 @@
     "name": "Spain",
     "page": "https://commons.wikimedia.org/wiki/File:Spain_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "L'Américain",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/8/81/Spain_%28orthographic_projection%29.svg"
@@ -1355,7 +1363,8 @@
     "name": "Switzerland",
     "page": "https://commons.wikimedia.org/wiki/File:Switzerland_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Western Europe"
     ],
     "author": "Marcos Elias de Oliveira Júnior",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/6/63/Switzerland_%28orthographic_projection%29.svg"
@@ -1365,7 +1374,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:United_Kingdom_(orthographic_projection).svg",
     "tags": [
       "Europe",
-      "Island"
+      "Island",
+      "Western Europe"
     ],
     "author": "Rob",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/0/07/United_Kingdom_%28orthographic_projection%29.svg"
