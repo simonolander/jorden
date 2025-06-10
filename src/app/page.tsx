@@ -14,19 +14,23 @@ interface Country {
     tags: string[]
 }
 
+interface AnsweredQuestion {
+    question: Question
+    answer: Country
+}
+
 interface Question {
     country: Country
     options: Country[]
-    answer: Country | undefined
 }
 
-type History = Question[]
+type History = AnsweredQuestion[]
 
 function chooseRandomCountry(history: History): Country {
     const numberOfCorrectGuesses = countries.map(_ => 0)
-    for (const question of history) {
-        if (question.country.name === question.answer?.name) {
-            const index = countryNameIndexMap.get(question.country.name)!!
+    for (const answeredQuestion of history) {
+        if (answeredQuestion.question.country.name === answeredQuestion.answer.name) {
+            const index = countryNameIndexMap.get(answeredQuestion.question.country.name)!!
             numberOfCorrectGuesses[index] += 1
         }
     }
@@ -50,7 +54,7 @@ function chooseRandomCountry(history: History): Country {
     return countries[chosenIndex]
 }
 
-function newState(history: History): Question {
+function createRandomQuestion(history: History): Question {
     const country = chooseRandomCountry(history)
     const tag = country.tags[Math.floor(Math.random() * country.tags.length)]
     const options = [country]
@@ -73,22 +77,21 @@ function newState(history: History): Question {
     return {
         country,
         options,
-        answer: undefined
     }
 }
 
 export default function Home() {
     const [history, setHistory] = useState<History>([])
-    const [question, setState] = useState(() => newState(history))
+    const [question, setQuestion] = useState(() => createRandomQuestion(history))
     const [score, setScore] = useState(0)
     const [total, setTotal] = useState(0)
     const [loading, setLoading] = useState(true)
-    const {country, options, answer} = question
+    const [answer, setAnswer] = useState<Country>()
+    const {country, options} = question
 
     const submitAnswer = (answer: Country) => {
-        const answeredQuestion = {...question, answer}
-        setHistory(it => [...it, answeredQuestion])
-        setState(answeredQuestion)
+        setHistory(it => [...it, {question, answer}])
+        setAnswer(answer)
         setTotal(it => it + 1)
         if (answer === country) {
             setScore(it => it + 1)
@@ -96,8 +99,10 @@ export default function Home() {
     }
 
     const onNewGameClick = function () {
-        setState(() => newState(history))
-        setLoading(true)
+        const nextQuestion = createRandomQuestion(history);
+        setQuestion(nextQuestion)
+        setAnswer(undefined)
+        setLoading(nextQuestion.country.name !== question.country.name)
     }
 
     return (
