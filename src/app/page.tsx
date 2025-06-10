@@ -134,7 +134,7 @@ export default function Home() {
                                             </p>
                                         )
                                 }
-                                <button className="new-game" onClick={() => onNewGameClick()}>Again!</button>
+                                <button className="new-game" onClick={() => onNewGameClick()} autoFocus>Again!</button>
                                 <p className="score">You've answered <strong>{score} out of {total}</strong> correctly!</p>
                             </>
                         )
