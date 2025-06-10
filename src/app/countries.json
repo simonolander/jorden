@@ -952,7 +952,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Georgia_(orthographic--projection).svg",
     "tags": [
       "Western Asia",
-      "Asia"
+      "Asia",
+      "Eastern Europe"
     ],
     "author": "Giorgi Balakhadze",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Georgia_%28orthographic--projection%29.svg"
@@ -962,7 +963,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Armenia_(orthographic_projection).svg",
     "tags": [
       "Western Asia",
-      "Asia"
+      "Asia",
+      "Eastern Europe"
     ],
     "author": "Ssolbergj",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/9/96/Armenia_%28orthographic_projection%29.svg"
@@ -972,7 +974,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Azerbaijan_orthographic_projection.svg",
     "tags": [
       "Western Asia",
-      "Asia"
+      "Asia",
+      "Eastern Europe"
     ],
     "author": "Hogweard",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/75/Azerbaijan_orthographic_projection.svg"
@@ -1062,7 +1065,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Turkey_(orthographic_projection).svg",
     "tags": [
       "Western Asia",
-      "Asia"
+      "Asia",
+      "Eastern Europe"
     ],
     "author": "theEmirr",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Turkey_%28orthographic_projection%29.svg"
@@ -1091,7 +1095,8 @@
     "name": "Albania",
     "page": "https://commons.wikimedia.org/wiki/File:Albania_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Marcos Elias de Oliveira Júnior",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Albania_%28orthographic_projection%29.svg"
@@ -1110,7 +1115,8 @@
     "name": "Belarus",
     "page": "https://commons.wikimedia.org/wiki/File:Belarus_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Rob984",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Belarus_%28orthographic_projection%29.svg"
@@ -1128,7 +1134,8 @@
     "name": "Bosnia and Herzegovina",
     "page": "https://commons.wikimedia.org/wiki/File:Bosnia_and_Herzegovina_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Marcos Elias de Oliveira Júnior",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/2/24/Bosnia_and_Herzegovina_%28orthographic_projection%29.svg"
@@ -1137,7 +1144,8 @@
     "name": "Bulgaria",
     "page": "https://commons.wikimedia.org/wiki/File:Bulgaria_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Matankic",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Bulgaria_%28orthographic_projection%29.svg"
@@ -1146,7 +1154,8 @@
     "name": "Czech Republic",
     "page": "https://commons.wikimedia.org/wiki/File:Czech_Republic_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Rob984",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/2/20/Czech_Republic_%28orthographic_projection%29.svg"
@@ -1230,7 +1239,8 @@
     "name": "Kosovo",
     "page": "https://commons.wikimedia.org/wiki/File:Kosovo_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Matankic",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/79/Kosovo_%28orthographic_projection%29.svg"
@@ -1239,7 +1249,8 @@
     "name": "North Macedonia",
     "page": "https://commons.wikimedia.org/wiki/File:North_Macedonia_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "MacedonianBoy",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/0/0a/North_Macedonia_%28orthographic_projection%29.svg"
@@ -1248,7 +1259,8 @@
     "name": "Montenegro",
     "page": "https://commons.wikimedia.org/wiki/File:Montenegro_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Marcos Elias de Oliveira Júnior",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/3/38/Montenegro_%28orthographic_projection%29.svg"
@@ -1275,7 +1287,8 @@
     "name": "Poland",
     "page": "https://commons.wikimedia.org/wiki/File:Poland_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Kubek15",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Poland_%28orthographic_projection%29.svg"
@@ -1293,7 +1306,8 @@
     "name": "Romania",
     "page": "https://commons.wikimedia.org/wiki/File:Romania_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Luciandrei",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/8/87/Romania_%28orthographic_projection%29.svg"
@@ -1303,7 +1317,8 @@
     "page": "https://commons.wikimedia.org/wiki/File:Russian_Federation_(orthographic_projection)_-_Crimea_disputed.svg",
     "tags": [
       "Northern Asia",
-      "Asia"
+      "Asia",
+      "Eastern Europe"
     ],
     "author": "UnixBased",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Russian_Federation_%28orthographic_projection%29_-_Crimea_disputed.svg"
@@ -1312,7 +1327,8 @@
     "name": "Serbia",
     "page": "https://commons.wikimedia.org/wiki/File:Serbia_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Eastern Europe"
     ],
     "author": "Милан Јелисавчић",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Serbia_%28orthographic_projection%29.svg"

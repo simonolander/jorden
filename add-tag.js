@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const countries = require("./src/app/countries.json")
 const fs = require("fs")
 
@@ -27,13 +29,11 @@ const countryNames = [
 
 for (const countryName of countryNames) {
   const country = countries.find(country => country.name === countryName);
-  console.log(country)
   if (!country) {
-    throw new Error(`Country ${countryName} not found`)
+    console.warn(`Country ${countryName} not found`)
+    continue
   }
 
-  country.tags = country.tags.filter(tag => tag !== "South America")
-  country.tags = country.tags.filter(tag => tag !== "North America")
   country.tags.push(tag)
   country.tags = [...new Set(country.tags)]
 }
