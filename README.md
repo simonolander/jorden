@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Maps from
 
 https://commons.wikimedia.org/wiki/Grey%E2%80%93green_orthographic_projections_maps
+https://observablehq.com/@mikima/draggable-svg-world-map
