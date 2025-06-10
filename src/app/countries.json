@@ -1165,7 +1165,8 @@
     "name": "Denmark",
     "page": "https://commons.wikimedia.org/wiki/File:Denmark_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Northern Europe"
     ],
     "author": "Scouten",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Denmark_%28orthographic_projection%29.svg"
@@ -1174,7 +1175,8 @@
     "name": "Finland",
     "page": "https://commons.wikimedia.org/wiki/File:Finland_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Northern Europe"
     ],
     "author": "Fjat",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Finland_%28orthographic_projection%29.svg"
@@ -1215,7 +1217,7 @@
     "tags": [
       "Europe",
       "Island",
-      "Western Europe"
+      "Northern Europe"
     ],
     "author": "Ninrouter",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Iceland_%28orthographic_projection%29.svg"
@@ -1284,7 +1286,8 @@
     "name": "Norway",
     "page": "https://commons.wikimedia.org/wiki/File:Norway_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Northern Europe"
     ],
     "author": "MSClaudiu",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/2/28/Norway_%28orthographic_projection%29.svg"
@@ -1354,7 +1357,8 @@
     "name": "Sweden",
     "page": "https://commons.wikimedia.org/wiki/File:Sweden_(orthographic_projection).svg",
     "tags": [
-      "Europe"
+      "Europe",
+      "Northern Europe"
     ],
     "author": "Eddo",
     "svg": "https://upload.wikimedia.org/wikipedia/commons/3/30/Sweden_%28orthographic_projection%29.svg"
