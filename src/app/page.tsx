@@ -6,20 +6,52 @@ import {useState} from "react";
 
 const buildDate = new Date(buildInfo.buildTime).toLocaleDateString("sv-SE")
 const buildDateTime = new Date(buildInfo.buildTime).toLocaleString("sv-SE")
+const countryNameIndexMap = new Map(countries.map((country, index) => [country.name, index]))
 
 interface Country {
-    name: string,
-    svg: string,
+    name: string
+    svg: string
+    tags: string[]
 }
 
-interface GameState {
-    country: Country,
-    options: Country[],
+interface Question {
+    country: Country
+    options: Country[]
     answer: Country | undefined
 }
 
-function newState(): GameState {
-    const country = countries[Math.floor(Math.random() * countries.length)]
+type History = Question[]
+
+function chooseRandomCountry(history: History): Country {
+    const numberOfCorrectGuesses = countries.map(_ => 0)
+    for (const question of history) {
+        if (question.country.name === question.answer?.name) {
+            const index = countryNameIndexMap.get(question.country.name)!!
+            numberOfCorrectGuesses[index] += 1
+        }
+    }
+
+    const weights = numberOfCorrectGuesses.map(it => Math.pow(0.5, it))
+    const totalWeight = weights.reduce((sum, weight) => sum + weight, 0);
+    const probabilities = weights.map(it => it / totalWeight)
+
+    const randomValue = Math.random()
+    let accumulatedProbability = 0
+    let chosenIndex = 0
+    for (let index = 0; index < probabilities.length; index++) {
+        const probability = probabilities[index]
+        accumulatedProbability += probability
+        if (accumulatedProbability >= randomValue) {
+            chosenIndex = index
+            break
+        }
+    }
+
+    return countries[chosenIndex]
+}
+
+function newState(history: History): Question {
+    const country = chooseRandomCountry(history)
     const tag = country.tags[Math.floor(Math.random() * country.tags.length)]
     const options = [country]
     const candidates = countries.filter(it => it.tags.includes(tag))
@@ -37,7 +69,7 @@ function newState(): GameState {
         }
         options.push(option)
     }
-    options.sort(() => Math.random() - 0.5)
+    options.sort(() => Math.random())
     return {
         country,
         options,
@@ -46,13 +78,17 @@ function newState(): GameState {
 }
 
 export default function Home() {
-    const [{country, options, answer}, setState] = useState(newState)
+    const [history, setHistory] = useState<History>([])
+    const [question, setState] = useState(() => newState(history))
     const [score, setScore] = useState(0)
     const [total, setTotal] = useState(0)
     const [loading, setLoading] = useState(true)
+    const {country, options, answer} = question
 
     const submitAnswer = (answer: Country) => {
-        setState(it => ({...it, answer}))
+        const answeredQuestion = {...question, answer}
+        setHistory(it => [...it, answeredQuestion])
+        setState(answeredQuestion)
         setTotal(it => it + 1)
         if (answer === country) {
             setScore(it => it + 1)
@@ -60,7 +96,7 @@ export default function Home() {
     }
 
     const onNewGameClick = function () {
-        setState(newState)
+        setState(() => newState(history))
         setLoading(true)
     }
 
