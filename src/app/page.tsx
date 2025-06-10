@@ -54,6 +54,15 @@ function chooseRandomCountry(history: History): Country {
     return countries[chosenIndex]
 }
 
+function shuffle<T>(array: T[]) {
+    for (let i = 0; i < array.length - 1; i += 1) {
+        const j = i + Math.floor(Math.random() * (array.length - i))
+        const temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    }
+}
+
 function createRandomQuestion(history: History): Question {
     const country = chooseRandomCountry(history)
     const tag = country.tags[Math.floor(Math.random() * country.tags.length)]
@@ -73,11 +82,9 @@ function createRandomQuestion(history: History): Question {
         }
         options.push(option)
     }
-    options.sort(() => Math.random())
-    return {
-        country,
-        options,
-    }
+    shuffle(options);
+
+    return {country, options}
 }
 
 export default function Home() {
